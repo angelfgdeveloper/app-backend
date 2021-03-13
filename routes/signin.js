@@ -9,8 +9,8 @@ const router = Router();
 
 router.post('/', [
   check('name', 'El nombre es obligatorio').not().isEmpty(),
-  check('birth', 'La fecha de nacimiento es requerida').not().isEmpty(),
-  check('email', 'El correo no es válido').isEmail(),
+  check('birth', 'La fecha de nacimiento es obligatoria').not().isEmpty(),
+  check('email', 'El correo electrónico no es válido').isEmail(),
   check('password', 'La contraseña es obligatoria y mayor a 6 letras').isLength({ min: 6 }),
   check('email').custom(emailExist),
   check('role').custom(isRoleValid),

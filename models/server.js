@@ -11,7 +11,7 @@ class Server {
 
     this.paths = {
       signin: '/api/signin',
-      login: '/api/login',
+      auth: '/api/auth',
     }
 
     // Conectar a base de datos
@@ -37,6 +37,7 @@ class Server {
 
   routes() {
     this.app.use(this.paths.signin, require('../routes/signin'));
+    this.app.use(this.paths.auth, require('../routes/auth'));
   }
 
   listen() {
@@ -62,4 +63,5 @@ module.exports = {
  * npm i express-validator
  * npm i bcryptjs
  * npm i mongoose
+ * npm i jsonwebtoken
  */
